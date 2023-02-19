@@ -1,0 +1,92 @@
+body {
+    width: 100%;
+    height: 100%;
+}
+
+.wrapper {
+    max-width: 800px;
+    margin: 20px auto;
+
+    .tl {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100px;
+        box-sizing: border-box;
+        background-color: blanchedalmond;
+        border: 1px solid;
+        padding: 5px;
+
+        & > div:not(.active) {
+        }
+
+        .go, .warn, .stop {
+            width: 90px;
+            height: 90px;
+            margin-top: 5px;
+            border-radius: 50%;
+            border: 1px solid;
+            filter: brightness(28%);
+        }
+
+        .go {       
+            background-color: green;
+        }
+
+        .warn {
+            background-color: rgb(200, 221, 11);
+        }
+
+        .stop {
+            background-color: red;
+        }
+
+        &.statusGo {
+            .go{
+                filter: brightness(100%);
+            }
+
+        }
+
+        &.statusWarn {
+            .warn {
+                filter: brightness(100%);
+            }
+            
+        }
+        &.statusStop {
+            .stop {
+                filter: brightness(100%);
+            }
+            
+        }
+    }
+
+}
+.home {
+    font-size: 25px;
+    // border: 1px solid darkcyan;
+    width: 800px;
+    margin: 20px auto;
+
+    .exampel {
+        max-width: 100%;
+        height: 100%;
+        border: 1px solid black;
+        display: flex;
+        flex-wrap: wrap;
+
+    }
+    .block {
+        width: 70px;
+        height: 50px;
+        border: 1px solid black;
+        text-align: center;
+        margin: 10px;
+        transform: skew(15deg);
+
+        &:hover {
+            border: 2px solid red;
+        }
+    }
+
+}

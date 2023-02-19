@@ -1,0 +1,68 @@
+body {
+  width: 100%;
+  height: 100%;
+}
+
+.wrapper {
+  max-width: 800px;
+  margin: 20px auto;
+}
+.wrapper .tl {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100px;
+  box-sizing: border-box;
+  background-color: blanchedalmond;
+  border: 1px solid;
+  padding: 5px;
+}
+.wrapper .tl .go, .wrapper .tl .warn, .wrapper .tl .stop {
+  width: 90px;
+  height: 90px;
+  margin-top: 5px;
+  border-radius: 50%;
+  border: 1px solid;
+  filter: brightness(28%);
+}
+.wrapper .tl .go {
+  background-color: green;
+}
+.wrapper .tl .warn {
+  background-color: rgb(200, 221, 11);
+}
+.wrapper .tl .stop {
+  background-color: red;
+}
+.wrapper .tl.statusGo .go {
+  filter: brightness(100%);
+}
+.wrapper .tl.statusWarn .warn {
+  filter: brightness(100%);
+}
+.wrapper .tl.statusStop .stop {
+  filter: brightness(100%);
+}
+
+.home {
+  font-size: 25px;
+  width: 800px;
+  margin: 20px auto;
+}
+.home .exampel {
+  max-width: 100%;
+  height: 100%;
+  border: 1px solid black;
+  display: flex;
+  flex-wrap: wrap;
+}
+.home .block {
+  width: 70px;
+  height: 50px;
+  border: 1px solid black;
+  text-align: center;
+  margin: 10px;
+  transform: skew(15deg);
+}
+.home .block:hover {
+  border: 2px solid red;
+}/*# sourceMappingURL=style.css.map */
