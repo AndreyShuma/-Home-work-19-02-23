@@ -45,29 +45,26 @@ const itemValue = idInput.value;
 const createBlock = (item) => {
     let arr =[];
     for (let i=0; i < item; i++) {
-        const a = `<div class="block"></div>`;
+        let count = i + 1;
+        const a = `<div class="block" data-value ="${count}">      
+        </div>`;
         arr.push(a);
     }
     exampel.innerHTML = arr.join('');
-
 };
-// const createNumber = () => {
-//     arr
-// }
+function romb(event)  {
+    let evTarget = event.target;
+    if(evTarget.classList[0] !== `block`) {return};
+    let a = evTarget.dataset.value;
+    evTarget.innerHTML = a;
+}
 
 //-----Запуск функції----------
 
-// btn.addEventListener('click', () => {
-//      idInput.addEventListener('change', (ev) => {
-//          let a = ev.target.value;
-//          createBlock(a);
-//      });
-//  });
  btn.addEventListener('click', () => {
-    console.log('count->', idInput.value);
+    // console.log('count->', idInput.value);
     createBlock(idInput.value);
-    // arr.addEventListener('click', (ev) => {
-    //     console.log(ev.target);
-    // });
 });
 
+exampel.addEventListener('click', romb);
+// exampel.removeEventListener('click', romb);
