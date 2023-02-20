@@ -40,14 +40,14 @@ const idInput = document.querySelector('.idInput');
 const exampel =document.querySelector('.exampel');
 const btn = document.querySelector('.btn');
 const itemValue = idInput.value;
+const statusRomba = true;
 
 //----- функції----------
 const createBlock = (item) => {
     let arr =[];
     for (let i=0; i < item; i++) {
         let count = i + 1;
-        const a = `<div class="block" data-value ="${count}">      
-        </div>`;
+        const a = `<div class="block" data-value ="${count}"></div>`;
         arr.push(a);
     }
     exampel.innerHTML = arr.join('');
@@ -55,10 +55,15 @@ const createBlock = (item) => {
 function romb(event)  {
     let evTarget = event.target;
     if(evTarget.classList[0] !== `block`) {return};
-    let a = evTarget.dataset.value;
-    evTarget.innerHTML = a;
+    if(evTarget.dataset.value) {evTarget.innerHTML = evTarget.dataset.value;
+        delete evTarget.dataset.value;
+        console.dir(event.target);
+        } else {
+        console.dir(event.target);
+        console.log(evTarget.dataset.value = evTarget.innerHTML);  // event.target.innerHTML
+        evTarget.innerHTML = '';
+        }
 }
-
 //-----Запуск функції----------
 
  btn.addEventListener('click', () => {
@@ -68,3 +73,4 @@ function romb(event)  {
 
 exampel.addEventListener('click', romb);
 // exampel.removeEventListener('click', romb);
+
